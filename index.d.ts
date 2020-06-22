@@ -17,5 +17,10 @@ declare module "vanilla-hooks" {
         onSubmit: (isValid: boolean, values: T) => void;
     }
 
-    function useVanillaForm<T>(form: IForm<T>): { handleSubmit: () => void };
+    interface IFormResult<T> {
+        handleSubmit: () => void;
+        getValuest(): T;
+    }
+
+    function useVanillaForm<T>(form: IForm<T>): IFormResult<T>;
 }

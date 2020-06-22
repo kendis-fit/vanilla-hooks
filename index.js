@@ -1,3 +1,4 @@
+import useVanillaForm from "./lib/useVanillaForm";
 import useVanillaFetch from "./lib/useVanillaFetch";
 
-export { useVanillaFetch };
+export { useVanillaForm, useVanillaFetch };

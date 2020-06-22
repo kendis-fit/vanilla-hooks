@@ -1,9 +1,8 @@
 {
   "name": "vanilla-hooks",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "a simple collection of fast hooks, including work with forms and api",
   "main": "index.js",
   "author": "Kurt Endless",
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }

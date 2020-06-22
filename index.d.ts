@@ -1,6 +1,6 @@
 declare module "vanilla-hooks" {
 
-    import { ObjectSchema, Shape, object, any } from "yup";
+    import { ObjectSchema, Shape } from "yup";
     import { Dispatch, SetStateAction } from "react";
 
     interface IData<T> {
@@ -14,6 +14,7 @@ declare module "vanilla-hooks" {
 
     interface IForm<T>{
         schema: ObjectSchema<Shape<any, any>>;
+        allFieldsExisted?: boolean;
         onSubmit: (isValid: boolean, values: T) => void;
     }
 

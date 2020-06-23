@@ -20,6 +20,7 @@ declare module "vanilla-hooks" {
     }
 
     interface IFormResult<T> {
+        errors: string[];
         handleSubmit: () => void;
         getValuest(): T;
     }

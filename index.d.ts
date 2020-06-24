@@ -3,6 +3,8 @@ declare module "vanilla-hooks" {
     import { ObjectSchema, Shape } from "yup";
     import { Dispatch, SetStateAction } from "react";
 
+    type DynamicObjectErrors = { [key: string]: string };
+
     interface IData<T> {
         data: T;
         setData: Dispatch<SetStateAction<T | undefined>>;
@@ -20,7 +22,7 @@ declare module "vanilla-hooks" {
     }
 
     interface IFormResult<T> {
-        errors: string[];
+        errors: DynamicObjectErrors;
         handleSubmit: () => void;
         getValuest(): T;
     }

@@ -1,10 +1,19 @@
 {
   "name": "vanilla-hooks",
-  "version": "0.7.31",
+  "version": "1.0.0",
   "description": "a simple collection of fast hooks, including work with forms and api",
   "main": "index.js",
   "author": "Kurt Endless",
   "license": "MIT",
   "repository": "https://github.com/kendis-fit/vanilla-hooks",
-  "keywords": ["react-hooks", "hooks", "formik", "hook-form", "yup-hook"]
+  "keywords": [
+    "react-hooks",
+    "hooks",
+    "formik",
+    "hook-form",
+    "yup-hook"
+  ],
+  "dependencies": {
+    "yup": "^0.29.1"
+  }
 }

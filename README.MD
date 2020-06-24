@@ -1,13 +1,16 @@
 # Introduction
-A kit of hooks that simplify work with forms and fetch. Typescript is included out of box.
+A kit of hooks that simplify work with forms and fetch. Typescript and yup are included out of box.
 
 ## Installation
 NPM
-> npm i vanilla-hooks yup react
+> npm i vanilla-hooks
 
 YARN
-> yarn add vanilla-hooks yup react
+> yarn add vanilla-hooks
 
+## Hooks
+[`useVanillaForm`](#how-to-use-usevanillaform)
+[`useVanillaFetch`](#how-to-use-usevanillafetch)
 
 ## How to use useVanillaForm
 A react hook that uses dom for the best optimisation forms, it allows to work with large forms that consists of hundreds of inputs
@@ -30,7 +33,7 @@ These restrictions are temporary
 Yup schema is required to bind the form model(fields that have attribute "name") and validation.
 
 `initialValues?: T`
-The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example company[0].sex = <input name="company[0].sex" />
+The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example company[0].sex = <input name='company[0].sex' />
 
 `allFieldsExisted?: boolean`
 The field is true by default, you should use to set the field as false, when your form is dynamic, otherwise it will give an error.
@@ -39,8 +42,8 @@ The field is true by default, you should use to set the field as false, when you
 Function that handles after using handleSubmit
 
 #### Returned Variables
-`errors: string[]`
-Yup mistakes. It will be more comfortable in the future as an object.
+`errors: { [key: string]: string }`
+You can get every error message with help of key. For example errors['company[0].sex']
 
 `handleSubmit: () => void`
 Function that handles parameter onSubmit. Use with form

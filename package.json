@@ -1,6 +1,6 @@
 {
   "name": "vanilla-hooks",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "a simple collection of fast hooks, including work with forms and api",
   "main": "index.js",
   "author": "Kurt Endless",
@@ -14,6 +14,7 @@
     "yup-hook"
   ],
   "dependencies": {
+    "@types/yup": "^0.29.3",
     "yup": "^0.29.1"
   }
 }

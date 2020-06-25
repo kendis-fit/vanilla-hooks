@@ -9,17 +9,14 @@ YARN
 > yarn add vanilla-hooks
 
 ## Hooks
-[`useVanillaForm`](#how-to-use-usevanillaform)
-[`useVanillaFetch`](#how-to-use-usevanillafetch)
+* [`useVanillaForm`](#how-to-use-usevanillaform)
+* [`useVanillaFetch`](#how-to-use-usevanillafetch)
 
 ## How to use useVanillaForm
-A react hook that uses dom for the best optimisation forms, it allows to work with large forms that consists of hundreds of inputs
-
-### Using
-The hook depends on package yup and react, so you should install the latest versions of yup, react to use it. Yup is needed to create common scheme
+A react hook that uses dom for the best optimisation forms, it allows to work with large forms that consists of hundreds of inputs.
 
 ### Reason of creating
-The hook was designed not looking at such popular instruments as formik and etcetera, because formik in comparing with current hook is very slow, because it uses hook 'useState' under the hood that can cope with large forms, it just lags. The hook has almost the same of functional formik, but it is faster in some times thanks dom
+The hook was designed not looking at such popular instruments as formik and etcetera, because formik in comparing with current hook is very slow, because it uses hook 'useState' under the hood that can cope with large forms, it just lags. The hook has almost the same of functional formik, but it is faster in some times thanks dom.
 
 ### Restrictions
 These restrictions are temporary
@@ -29,26 +26,28 @@ These restrictions are temporary
 ### API
 
 #### Parameters
-`schema: ObjectSchema<Shape<any, any>>`
+
+##### `schema: ObjectSchema<Shape<any, any>>`
 Yup schema is required to bind the form model(fields that have attribute "name") and validation.
 
-`initialValues?: T`
-The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example company[0].sex = <input name='company[0].sex' />
+##### `initialValues?: T`
+The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example `company[0].sex` = `<input name='company[0].sex' />`
 
-`allFieldsExisted?: boolean`
+##### `allFieldsExisted?: boolean`
 The field is true by default, you should use to set the field as false, when your form is dynamic, otherwise it will give an error.
 
-`onSubmit: (isValid: boolean, values: T, errors?: any) => void`
+##### `onSubmit: (isValid: boolean, values: T, errors?: any) => void`
 Function that handles after using handleSubmit
 
 #### Returned Variables
-`errors: { [key: string]: string }`
-You can get every error message with help of key. For example errors['company[0].sex']
 
-`handleSubmit: () => void`
+##### `errors: { [key: string]: string }`
+You can get every error message with help of key. For example `errors['company[0].sex']`
+
+##### `handleSubmit: () => void`
 Function that handles parameter onSubmit. Use with form
 
-`getValuest(): T`
+##### `getValuest(): T`
 Return values in real time
 
 ### Examples
@@ -107,24 +106,25 @@ function App() {
             <div>
                 <label>Name: </label>
                 <input name="name" />
+                <span>{errors["name"]}</span>
             </div>
             <div>
                 <label>Age: </label>
                 <input name="age" />
+                <span>{errors["age"]}</span>
             </div>
             <div>
                 <label>Companies: </label>
                 <div>
                     <input name="company[0].name" />
+                    <span>{errors["company[0].name"]}</span>
                 </div>
                 <div>
                     <input name="company[0].sex" type="checkbox" />
+                    <span>{errors["company[0].sex"]}</span>
                 </div>
             </div>
             <button type="submit">Submit</button>
-            {
-                errors.map(error => <div>{error}</div>)
-            }
         </form>
     );
 }

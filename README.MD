@@ -33,22 +33,25 @@ Yup schema is required to bind the form model(fields that have attribute "name")
 ##### `initialValues?: T`
 The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example `company[0].sex` = `<input name='company[0].sex' />`
 
+##### `valuesAnyway?: boolean`
+The field is false by default, if you need to get values in submit even durin an error, then you can set the field as true.
+
 ##### `allFieldsExisted?: boolean`
 The field is true by default, you should use to set the field as false, when your form is dynamic, otherwise it will give an error.
 
 ##### `onSubmit: (isValid: boolean, values: T, errors?: any) => void`
-Function that handles after using handleSubmit
+Function that handles after using handleSubmit.
 
 #### Returned Variables
 
 ##### `errors: { [key: string]: string }`
-You can get every error message with help of key. For example `errors['company[0].sex']`
+You can get every error message with help of key. For example `errors['company[0].sex']`.
 
 ##### `handleSubmit: () => void`
-Function that handles parameter onSubmit. Use with form
+Function that handles parameter onSubmit. Use with form.
 
 ##### `getValuest(): T`
-Return values in real time
+Return values in real time.
 
 ### Examples
 ```jsx

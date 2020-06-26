@@ -12,9 +12,6 @@ YARN
 * [`useVanillaForm`](#how-to-use-usevanillaform)
 * [`useVanillaFetch`](#how-to-use-usevanillafetch)
 
-## Status
-It is not ready to production yet
-
 ## How to use useVanillaForm
 A react hook that uses dom for the best optimisation forms, it allows to work with large forms that consists of hundreds of inputs.
 

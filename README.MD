@@ -33,6 +33,9 @@ Yup schema is required to bind the form model(fields that have attribute "name")
 ##### `initialValues?: T`
 The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example `company[0].sex` = `<input name='company[0].sex' />`
 
+##### `validateChange?: boolean`
+The field is false by default, if you need to validate every field during changing, then you can set the field as true.
+
 ##### `valuesAnyway?: boolean`
 The field is false by default, if you need to get values in submit even durin an error, then you can set the field as true.
 
@@ -48,9 +51,12 @@ Function that handles after using handleSubmit.
 You can get every error message with help of key. For example `errors['company[0].sex']`.
 
 ##### `handleSubmit: () => void`
-Function that handles parameter onSubmit. Use with form.
+Function that handles parameter onSubmit. Use with a form.
 
-##### `getValuest(): T`
+##### `setValues: () => void;`
+Set values in dom.
+
+##### `getValues: () => T`
 Return values in real time.
 
 ### Examples

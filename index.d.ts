@@ -9,7 +9,7 @@ declare module "vanilla-hooks" {
         data: T;
         setData: Dispatch<SetStateAction<T | undefined>>;
         loading: boolean;
-        error: boolean;
+        error: Error;
     }
 
     function useVanillaFetch<T>(fetchMethod: () => Promise<T>): IData<T>;

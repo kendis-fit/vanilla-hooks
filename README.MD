@@ -16,7 +16,7 @@ YARN
 A react hook that uses dom for the best optimisation forms, it allows to work with large forms that consists of hundreds of inputs.
 
 ### Reason of creating
-The hook was designed not looking at such popular instruments as formik and etcetera, because formik in comparing with current hook is very slow, because it uses hook 'useState' under the hood that can cope with large forms, it just lags. The hook has almost the same of functional formik, but it is faster in some times thanks dom.
+The hook was designed not looking at such popular instruments as formik and etcetera, because formik in comparing with current hook is very slow, because it uses hook 'useState' under the hood that can't cope with large forms, it just lags. The hook has almost the same of functional formik, but it is faster in some times thanks dom.
 
 ### Restrictions
 These restrictions are temporary
@@ -32,9 +32,6 @@ Yup schema is required to bind the form model(fields that have attribute "name")
 
 ##### `initialValues?: T`
 The field isn't required, you can build form without initialisation values. The values will bind to name attributes of dom. For example `company[0].sex` = `<input name='company[0].sex' />`
-
-##### `validateChange?: boolean`
-The field is false by default, if you need to validate every field during changing, then you can set the field as true.
 
 ##### `valuesAnyway?: boolean`
 The field is false by default, if you need to get values in submit even durin an error, then you can set the field as true.

@@ -1,4 +1,4 @@
-import useVanillaForm from "./lib/useVanillaForm";
-import useVanillaFetch from "./lib/useVanillaFetch";
+import useVanillaForm from "./dist/useVanillaForm";
+import useVanillaFetch from "./dist/useVanillaFetch";
 
 export { useVanillaForm, useVanillaFetch };

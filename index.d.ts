@@ -17,7 +17,6 @@ declare module "vanilla-hooks" {
     interface IForm<T>{
         schema: ObjectSchema<Shape<any, any>>;
         initialValues?: T;
-        validateChange?: boolean;
         valuesAnyway?: boolean;
         allFieldsExisted?: boolean;
         onSubmit: (isValid: boolean, values: T, errors?: any) => void;

@@ -1,11 +1,15 @@
 {
   "name": "vanilla-hooks",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "a simple collection of fast hooks, including work with forms and api",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "author": "Kurt Endless",
   "license": "MIT",
   "repository": "https://github.com/kendis-fit/vanilla-hooks",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel ./lib --out-dir ./dist"
+  },
   "keywords": [
     "react-hooks",
     "hooks",
@@ -16,5 +20,10 @@
   "dependencies": {
     "@types/yup": "^0.29.3",
     "yup": "^0.29.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0"
   }
 }
